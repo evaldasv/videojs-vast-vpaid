@@ -143,7 +143,7 @@ dom.onReady(function() {
     }
 
     function createVideoEl(container, cb) {
-      var videoTag = '<video class="video-js vjs-default-skin" controls preload="auto" poster="http://vjs.zencdn.net/v/oceans.png" >' +
+      var videoTag = '<video class="video-js vjs-default-skin" controls preload="none" poster="http://vjs.zencdn.net/v/oceans.png" >' +
         '<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"/>' +
         '<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"/>' +
         '<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"/>' +
