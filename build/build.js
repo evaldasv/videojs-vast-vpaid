@@ -26,7 +26,7 @@ var config       = require('./config');
 
 var devPath      = path.join(config.DEV, '/');
 var distPath     = path.join(config.DIST, '/');
-var isProduction = config.env === 'production';
+var isProduction = true; //config.env === 'production';
 
 
 gulp.task('build', function (done) {
