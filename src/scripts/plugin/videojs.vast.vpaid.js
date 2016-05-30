@@ -91,13 +91,12 @@ module.exports = function VASTPlugin(options) {
     });
   }
 
-  console.log('test');
-
   if (settings.prefetchAdTag) {
     tryToPlayPrerollAd();
   } else {
     player.on('vast.firstPlay', tryToPlayPrerollAd);
   }
+
 
   player.on('vast.reset', function () {
     //If we are reseting the plugin, we don't want to restore the content
@@ -135,7 +134,6 @@ module.exports = function VASTPlugin(options) {
       checkAdsEnabled,
       preparePlayerForAd,
       startAdCancelTimeout,
-      getVastResponse,
       playPrerollAd
     ], function (error, response) {
       if (error) {
@@ -250,6 +248,7 @@ module.exports = function VASTPlugin(options) {
 
   function playPrerollAd(callback) {
     async.waterfall([
+      getVastResponse,
       playAd
     ], callback);
   }
@@ -281,8 +280,8 @@ module.exports = function VASTPlugin(options) {
     }
 
     player.vast.vastResponse = vastResponse;
-    
     logger.debug ("calling adIntegrator.playAd() with vastResponse:", vastResponse);
+
     if (settings.prefetchAdTag) {
       player.one('play', _playAd);
     } else {
