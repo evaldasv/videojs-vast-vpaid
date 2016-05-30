@@ -91,6 +91,8 @@ module.exports = function VASTPlugin(options) {
     });
   }
 
+  console.log('test');
+
   if (settings.prefetchAdTag) {
     tryToPlayPrerollAd();
   } else {
