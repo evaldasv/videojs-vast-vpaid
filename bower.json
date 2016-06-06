@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "VPAIDFLASHClient": "^1.0.2",
-    "VPAIDHTML5Client": "^0.1.14"
+    "VPAIDHTML5Client": "git://github.com/evaldasv/VPAIDHTML5Client.git#origin-fix"
   },
   "devDependencies": {
     "videojs_5": "video.js#5",
