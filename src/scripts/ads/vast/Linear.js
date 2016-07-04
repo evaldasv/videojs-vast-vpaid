@@ -53,6 +53,9 @@ function Linear(linearJTree) {
       mediaFilesJxonTree = utilities.isArray(mediaFilesJxonTree) ? mediaFilesJxonTree : [mediaFilesJxonTree];
 
       mediaFilesJxonTree.forEach(function (mfData) {
+        if (mfData['@type'] === 'application/x-shockwave-flash') {
+          return;
+        }
         mediaFiles.push(new MediaFile(mfData));
       });
     }
